@@ -9,9 +9,8 @@ def emotions_detecter(image_array):
 
     t1 = time.time()
     test_image = cv2.resize(image_array, (256, 256))
-    im = np.float32(test_image)
 
-    image_array = np.expand_dims(im, axis = 0)
+    image_array = np.expand_dims(test_image, axis = 0)
 
 
     interpreter = tflite.Interpreter(model_path = 'service/eff_model.tflite')
